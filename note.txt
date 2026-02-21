@@ -1,0 +1,15 @@
+solana is an account heavy system 
+TOKEN_MINT authority = 5JpCCEZ8p9Ld7pTTXXJYVd6tgKoLCbjrDYCmy7edS5eB
+mint token address 9g9SZmB2USCSS6GJe7pZTVaMZbA6RMpS9d47TdaSQdH6
+token-account = 2KYfXUPfLP4PjNChruUeLNzcZpjasrqa2BHj5QWjeuHX
+
+send to token account, token acc is our ATA (Associated Token Accounts)
+
+assignment, create tokens and send to our colleagues
+1billion lamports  1sol
+sol is measured in lamports
+
+create new tokens with unique names, and send to others
+
+learn about the varous accounts 
+system accounts, loader accounts, 

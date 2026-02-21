@@ -9,7 +9,7 @@ console.log(`Successfully loaded our keypair securely, Our publick key is : ${us
 
 const TOKEN_METADATA_PROGRAM_ID = new PublicKey("metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s");
 
-const tokenMintAccount = new PublicKey("Bs9vXPBZL4X4Jfo9Y1C8SusWBCWQzNW3XbQujevsDZc6")
+const tokenMintAccount = new PublicKey(process.env.TOKEN_MINT || "9g9SZmB2USCSS6GJe7pZTVaMZbA6RMpS9d47TdaSQdH6");
 
 const metadataData = {
     name: "Blockfuse Fellowship",
