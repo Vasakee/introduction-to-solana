@@ -8,8 +8,8 @@ const connection = new Connection(clusterApiUrl("devnet"));
 const user = getKeypairFromEnvironment("SECRET_KEY");
 console.log(`Successfully loaded our keypair securely, Our publick key is : ${user.publicKey.toBase58()}` );
 
-// Subtitute in your token mint account from create-token-mint.ts
-const tokenMintAccount = new PublicKey("9g9SZmB2USCSS6GJe7pZTVaMZbA6RMpS9d47TdaSQdH6")
+// Substitute in your token mint account from create-token-mint.ts
+const tokenMintAccount = new PublicKey("8NNB7z6rXnnpXmoHrW8BRqdRSLc35qAx8ZQiK33hhL6a");
 
 const recipient = user.publicKey;
  

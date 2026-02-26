@@ -1,7 +1,7 @@
 import "dotenv/config"
 import { getKeypairFromEnvironment, getExplorerLink } from "@solana-developers/helpers";
 import { Connection, clusterApiUrl, PublicKey } from "@solana/web3.js";
-import { mintTo } from "@solana/spl-token";
+import { mintTo, getOrCreateAssociatedTokenAccount } from "@solana/spl-token";
 
 
 const connection = new Connection(clusterApiUrl("devnet"));
@@ -10,21 +10,30 @@ const user = getKeypairFromEnvironment("SECRET_KEY");
 
 console.log(`Successfully loaded our keypair securely, Our publick key is : ${user.publicKey.toBase58()}` );
 
-// our token has 2 decimal places
-const MINOR_UNITS_PER_MAJOR_UNITS = Math.pow(10, 3)
+// our token has 3 decimal places (set when the mint was created)
+const MINOR_UNITS_PER_MAJOR_UNITS = Math.pow(10, 3);
 
 // Substitute our token mint account
-const tokenMintAccount = new PublicKey("9g9SZmB2USCSS6GJe7pZTVaMZbA6RMpS9d47TdaSQdH6");
+const tokenMintAccount = new PublicKey("8NNB7z6rXnnpXmoHrW8BRqdRSLc35qAx8ZQiK33hhL6a");
 
-// substitute with our ATA, token account. you can mint to a friends token account
-const recipientAssociatedTokenAccount = new PublicKey("2KYfXUPfLP4PjNChruUeLNzcZpjasrqa2BHj5QWjeuHX");
+// Recipient owner public key (who will receive the minted tokens)
+const recipient = user.publicKey;
+
+// Ensure the recipient has an associated token account (ATA) for this mint.
+// This will create it if it doesn't exist and return the account info.
+const ata = await getOrCreateAssociatedTokenAccount(
+    connection,
+    user, // payer
+    tokenMintAccount,
+    recipient
+);
 
 const transactionSignature = await mintTo(
     connection,
     user,
     tokenMintAccount,
-    recipientAssociatedTokenAccount,
-    user,
+    ata.address, // destination must be a token account associated with the mint
+    user, // mint authority
     10 * MINOR_UNITS_PER_MAJOR_UNITS
 );
 

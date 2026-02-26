@@ -9,11 +9,11 @@ console.log(`Successfully loaded our keypair securely, Our publick key is : ${us
 
 const TOKEN_METADATA_PROGRAM_ID = new PublicKey("metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s");
 
-const tokenMintAccount = new PublicKey(process.env.TOKEN_MINT || "9g9SZmB2USCSS6GJe7pZTVaMZbA6RMpS9d47TdaSQdH6");
+const tokenMintAccount = new PublicKey(process.env.TOKEN_MINT || "8NNB7z6rXnnpXmoHrW8BRqdRSLc35qAx8ZQiK33hhL6a");
 
 const metadataData = {
-    name: "Blockfuse Fellowship",
-    symbol: "BFL",
+    name: "Vasman Token",
+    symbol: "VSMN",
     // Arweave / IPFS / Pinata etc link using metaplex standard for off-chain data
     uri: "https://arweave.net/1234",
     sellerFeeBasisPoints: 0,

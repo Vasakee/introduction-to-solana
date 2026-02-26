@@ -13,3 +13,10 @@ create new tokens with unique names, and send to others
 
 learn about the varous accounts 
 system accounts, loader accounts, 
+we need wallet and user to create ATA, every token has it's own ATA, a wallet can have multiple ATAs, 
+each ATA is unique to the user 
+mint account is like the contract address, 
+answer the review questions on this: https://docs.google.com/document/d/11VEkw2ftKpHgdmsuN8lXrQmIg_mM93aM/edit?pli=1
+on either medium or any blogging platforms
+
+assignment 2, go through all the instructions in this https://solana.com/docs/tokens/basics, and then execute them 
